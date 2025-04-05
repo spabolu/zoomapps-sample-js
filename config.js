@@ -1,8 +1,16 @@
 import { URL } from 'url';
 
+// Load environment variables in development
 if (process.env.NODE_ENV !== 'production') {
-    const dotenv = await import('dotenv');
-    dotenv.config();
+    // Dynamic import for dotenv (only in development)
+    const importDotenv = async () => {
+        const dotenv = await import('dotenv');
+        dotenv.config();
+    };
+    // IIFE to handle the async import
+    (async () => {
+        await importDotenv();
+    })();
 }
 
 const config = process.env;

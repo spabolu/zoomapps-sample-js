@@ -1,5 +1,4 @@
 # dotenv environment variables file
-.env
 .env.*
 !.env.sample
 
@@ -829,3 +828,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+.env
